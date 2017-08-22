@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'; // something about defining dependent modules?
-import { Report } from '../models/report'; // bring in our class data schema
+import { Report, NewReport } from '../models/report'; // bring in our class data schema
 import { Http, Headers } from '@angular/http'; // @angular ajax ftw
 import 'rxjs/add/operator/toPromise'; // turns request into promise
 
@@ -15,6 +15,16 @@ export class ReportService {
               .toPromise() //turn to promise
               .then(response => response.json().encounters) // turn the response to response.json with .then event handler
               .catch(this.handleError); // catch unexpected errors that you did not program
+
+  }
+  registerReport(encounter: NewReport): Promise<Report> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const body = JSON.stringify({ encounter });
+    return this.http
+               .post(this.encountersUrl, body, { headers: headers })
+               .toPromise()
+               .then(response => response.json().report)
+               .catch(this.handleError);
 
   }
 
