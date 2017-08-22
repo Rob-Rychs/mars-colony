@@ -5,7 +5,7 @@ import { ReportService } from '../../services/encounters';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styles: [],
+  styleUrls: ['./report.component.scss'],
   providers: [
     AlienService,
     ReportService
