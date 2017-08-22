@@ -1,5 +1,4 @@
-export interface Report {
-  id: number;
+export interface NewReport {
   date: string;
   colonist_id: number;
   atype: string;
