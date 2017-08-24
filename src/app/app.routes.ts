@@ -12,3 +12,4 @@ export const appRoutes: Routes = [
   { path: 'report', component: ReportComponent, data: { state: 'report'} },
   { path: '**', component: NotfoundComponent, data: { state: 'notfound'}},
 ];
+
