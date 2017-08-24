@@ -47,6 +47,7 @@ export class ReportComponent implements OnInit {
       action: this.encounterForm.get('action').value,
       colonist_id: this.colonistService.getStoredColonist().id
     }
-    console.log(this.colonistService.getStoredColonist().id);
+    const report = this.reportService.registerReport(newReport);
+    console.log(report);
   }
 }

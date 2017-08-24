@@ -12,6 +12,9 @@
   height: 50vh;
   overflow: scroll;
 }
+.encounters-list::-webkit-scrollbar { 
+  display: none;
+}
 
 li {
   list-style: none;
