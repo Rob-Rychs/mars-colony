@@ -7,6 +7,7 @@
           <option *ngFor="let alien of aliens" [value]="alien.id">{{alien.type}}</option>
         </select>
         <textarea formControlName="action" cols="30" rows="5" placeholder="What'd it do doe"></textarea>
-        <button [disabled]="encounterForm.status === 'INVALID'" type="submit" onclick="location.href='encounters'"><h2>Submit Report</h2></button>
+        <button [disabled]="encounterForm.status === 'INVALID'" type="submit" ><h2>Submit Report</h2></button>
       </form> 
     </div>
+    <!-- onclick="location.href='encounters'" -->

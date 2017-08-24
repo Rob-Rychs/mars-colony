@@ -3,7 +3,7 @@ import {Job} from './job';
 export interface Colonist {
   name: string;
   job: Job;
-  job_id: string; 
+  id: number; 
   age: string;
 }
 

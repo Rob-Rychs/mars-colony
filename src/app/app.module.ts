@@ -12,6 +12,7 @@ import { ReportComponent } from './components/report/report.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { appRoutes } from './app.routes';
+import { ColonistService } from './services/colonist';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { appRoutes } from './app.routes';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ColonistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.encounter-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.encounters-list {
+  height: 50vh;
+  overflow: scroll;
+}
+
+li {
+  list-style: none;
+}
+
+footer {
+  height: 40%;
+  position: fixed;
+  bottom: 0px;
+}

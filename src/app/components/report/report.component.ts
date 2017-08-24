@@ -4,6 +4,7 @@ import { ReportService } from '../../services/encounters';
 import { Alien } from '../../models/alien';
 import { FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
 import { NewReport } from '../../models/report';
+import { ColonistService } from '../../services/colonist';
 
 @Component({
   selector: 'app-report',
@@ -29,7 +30,8 @@ export class ReportComponent implements OnInit {
 
   constructor(
     private alienService: AlienService,
-    private reportService: ReportService
+    private reportService: ReportService,
+    private colonistService: ColonistService
   ) { }
 
   async ngOnInit() {
@@ -37,11 +39,14 @@ export class ReportComponent implements OnInit {
   }
 
   async registerReport() {
+
+
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,
       date: Date.now.toString(),
       action: this.encounterForm.get('action').value,
-      colonist_id: 4
+      colonist_id: this.colonistService.getStoredColonist().id
     }
+    console.log(this.colonistService.getStoredColonist().id);
   }
 }

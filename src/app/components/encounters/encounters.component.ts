@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from '../../services/encounters';
+import { Report } from '../../models/report';
 
 
 @Component({
@@ -12,18 +13,15 @@ import { ReportService } from '../../services/encounters';
 })
 export class EncountersComponent implements OnInit {
 
+  // report: Report;
+  reports: Report[];
+
   constructor(private reportService: ReportService) { }
-  
-    // this code here is the exact same as the below, different syntax
-    // ngOnInit() {
-    //   this.reportService.getReport().then((response) => {
-    //     console.log(response);
-    //   });
-    // }
-    // this uses async + await to handle the promise 
+   
     async ngOnInit() {
-      const report = await this.reportService.getReport();
-      console.log(report);
+      this.reports = await this.reportService.getReport();
+      // this.reports = report;
+      console.log(this.reports);
     }
 
 }

@@ -1,12 +1,15 @@
-<div>
+<div class="encounter-page">
   <div class="heading">
     <h1>Recent Encounters</h1>
     <h3>See an Alien? Report it!</h3>
   </div>
-  <ul>
-    
-  </ul>
+  <div class="encounters-list">
+    <ul>
+      <li *ngFor="let report of reports"> {{report.date}} - {{report.atype}} - 
+            {{report.action}}</li>
+    </ul>
+  </div>
   <footer>
-    <a href="report"><h2>Report Encounter</h2></a>
-  </footer>
+    <h3>Report Encounter</h3>
+  </footer>  
 </div>
