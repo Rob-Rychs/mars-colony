@@ -5,6 +5,8 @@ import { Alien } from '../../models/alien';
 import { FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
 import { NewReport } from '../../models/report';
 import { ColonistService } from '../../services/colonist';
+import { Router } from '@angular/router';
+import { Colonist } from '../../models/colonist';
 
 @Component({
   selector: 'app-report',
@@ -31,23 +33,27 @@ export class ReportComponent implements OnInit {
   constructor(
     private alienService: AlienService,
     private reportService: ReportService,
-    private colonistService: ColonistService
+    private colonistService: ColonistService,
+    private router: Router
   ) { }
 
   async ngOnInit() {
     this.aliens = await this.alienService.getAliens();
   }
 
-  async registerReport() {
-
-
+  async newReport() {
+    
+    const colonistId = this.colonistService.getStoredColonist().id.toString();
+    let todayDate = new Date().toISOString().slice(0,10); 
+    console.log('hello there');
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,
-      date: Date.now.toString(),
+      date: todayDate,
       action: this.encounterForm.get('action').value,
-      colonist_id: this.colonistService.getStoredColonist().id
-    }
-    const report = this.reportService.registerReport(newReport);
-    console.log(report);
+      colonist_id: '31'
+    };
+    console.log('again');
+    await this.reportService.registerReport(newReport);
+    this.router.navigate(['encounters']);
   }
 }

@@ -17,9 +17,11 @@ export class ColonistService {
     return this.http
                .post(this.colonistUrl, body, { headers: headers })
                .toPromise()
-               .then((response) => {
+               .then(response => {
                  this.stored = response.json().colonist;
-               return response.json().colonist})
+                 console.log('this is stored colonist', this.stored); 
+               return response.json().colonist
+              })
                .catch(this.handleError);
 
   }

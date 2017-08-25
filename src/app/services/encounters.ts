@@ -23,7 +23,7 @@ export class ReportService {
     return this.http
                .post(this.encountersUrl, body, { headers: headers })
                .toPromise()
-               .then(response => response.json().report)
+               .then(response => response.json().encounter)
                .catch(this.handleError);
 
   }

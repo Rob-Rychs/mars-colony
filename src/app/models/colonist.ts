@@ -4,7 +4,7 @@ export interface Colonist {
   name: string;
   job: Job;
   id: number; 
-  age: string;
+  age: number;
 }
 
 export interface NewColonist {
