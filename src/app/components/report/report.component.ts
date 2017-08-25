@@ -44,7 +44,8 @@ export class ReportComponent implements OnInit {
   async newReport() {
     
     const colonistId = this.colonistService.getStoredColonist().id.toString();
-    let todayDate = new Date().toISOString().slice(0,10); 
+    let todayDate = new Date().toString();
+    // .toISOString().slice(0,10); 
     console.log('hello there');
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,

@@ -12,6 +12,8 @@ import { EncountersComponent } from './components/encounters/encounters.componen
 import { ReportComponent } from './components/report/report.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
+import {OrderByPipe} from "./orderby.pipe"
+
 import { appRoutes } from './app.routes';
 import { ColonistService } from './services/colonist';
 
@@ -22,7 +24,8 @@ import { ColonistService } from './services/colonist';
     RegisterComponent,
     EncountersComponent,
     ReportComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

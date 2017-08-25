@@ -5,7 +5,7 @@
   </div>
   <div class="encounters-list">
     <ul>
-      <li *ngFor="let report of reports"> {{report.date}} - {{report.atype}} - 
+      <li *ngFor="let report of reports | orderByPipe "> {{report.date}} - {{report.atype}} - 
             {{report.action}}</li>
     </ul>
   </div>

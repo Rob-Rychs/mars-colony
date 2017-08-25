@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from '../../services/encounters';
 import { Report } from '../../models/report';
+import {OrderByPipe} from "../../orderby.pipe";
 
 
 @Component({
